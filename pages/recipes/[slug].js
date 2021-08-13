@@ -35,10 +35,11 @@ export const getStaticProps = async ({ params }) => {
     return {
       redirect: {
         destination: '/',
-        permanent: false
-      }
-    }
+        permanent: false,
+      },
+    };
   }
+
   return {
     props: { recipe: items[0] },
     revalidate: 1,
@@ -46,10 +47,10 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export default function RecipeDetails({ recipe }) {
-  if(!recipe) return <Skeleton/>
+  if (!recipe) return <Skeleton />;
+
   const { featuredImage, title, cookingTime, ingredients, method } =
     recipe.fields;
-  console.log(method);
 
   return (
     <div>
